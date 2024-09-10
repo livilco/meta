@@ -231,11 +231,11 @@ func fnPing(ce *WrappedCommandEvent) {
 	if ce.User.MetaID == 0 {
 		ce.Reply("You're not logged in")
 	} else if !ce.User.IsLoggedIn() {
-		ce.Reply("You were logged in at some point, but are not anymore")
+		ce.Reply("You were logged in at some point, but are not anymore. User ID: %d", ce.User.MetaID)
 	} else if !ce.User.Client.IsConnected() {
-		ce.Reply("You're logged into Meta, but not connected to the server")
+		ce.Reply("You're logged into Meta, but not connected to the server. User ID: %d", ce.User.MetaID)
 	} else {
-		ce.Reply("You're logged into Meta and probably connected to the server")
+		ce.Reply("You're logged into Meta and probably connected to the server. User ID: %d", ce.User.MetaID)
 	}
 }
 
